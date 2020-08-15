@@ -153,14 +153,14 @@ def test_DA(epoch):
         gt_data = gt_data.data.cpu().numpy()
 
         tgt_img = gt_data[0][0]
-        plt.imsave('./results_DA_ablated/images_gt/{}'.format(full_imgname), tgt_img, format='png', cmap='gray')
+        plt.imsave('./results_DA_ablated/images_gt/IMG_{}.png'.format(full_imgname), tgt_img, format='png', cmap='gray')
 
         adv_tgt_img = im_data[0][0]
-        plt.imsave('./results_DA_ablated/images_adv/{}'.format(full_imgname), adv_tgt_img, format='png',
+        plt.imsave('./results_DA_ablated/images_adv/IMG_{}.png'.format(full_imgname), adv_tgt_img, format='png',
                    cmap=plt.cm.jet)
 
         adv_out = density_map[0][0]
-        plt.imsave('./results_DA_ablated/density_map_adv/{}'.format(full_imgname), adv_out, format='png', cmap='gray')
+        plt.imsave('./results_DA_ablated/density_map_adv/IMG_{}.png'.format(full_imgname), adv_out, format='png', cmap='gray')
 
         et_count = np.sum(density_map)
         gt_count = np.sum(gt_data)
